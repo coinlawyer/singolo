@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 63" width="63" height="63">
+	<style>
+		tspan { white-space:pre }
+		.txt0 { font-size: 5px;line-height: 5px;fill: #666d89;font-family: "Lato";font-weight: 900;text-anchor: start } 
+		.txt1 { font-size: 12px;line-height: 22px;fill: #767e9e;font-family: "Lato";font-weight: 400;text-anchor: start } 
+		.shp2 { fill: #666d89 } 
+		.shp3 { fill: none;stroke: #666d89;stroke-width: 2 } 
+	</style>
+	<g id="Bulb">
+		<text id="Inovative Ideas" style="transform: matrix(3.866,0,0,3.916,81,16.011)" >
+			<tspan x="0" y="0" class="txt0">Inovative Ideas</tspan>
+		</text>
+		<text id="Quisque luctus, quam eget molestie commodo, lacus purus cursus " style="transform: matrix(1,0,0,1,81.604,34)" >
+			<tspan x="0" y="12" class="txt1">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</tspan>
+		</text>
+		<path id="bulb" class="shp2" d="M32 15C25.92 15 21 19.92 21 26C21 30.03 24.69 34.3 26.03 38.05C28.03 43.65 27.81 47 32 47C36.25 47 35.96 43.67 37.97 38.08C39.32 34.32 43 30 43 26C43 19.92 38.08 15 32 15ZM34.59 42.18L29.63 42.8C29.46 42.28 29.27 41.68 29.04 40.9C29.03 40.89 29.03 40.88 29.03 40.87L35.22 40.1C35.13 40.39 35.03 40.7 34.95 40.98C34.82 41.43 34.7 41.82 34.59 42.18ZM28.74 39.91C28.55 39.31 28.35 38.67 28.12 38L35.89 38C35.76 38.36 35.64 38.72 35.54 39.06L28.74 39.91ZM32 45C30.99 45 30.52 44.88 30 43.75L34.24 43.22C33.63 44.87 33.18 45 32 45ZM36.67 36L27.34 36C26.84 34.92 26.24 33.84 25.65 32.78C24.35 30.45 23 28.03 23 26C23 21.04 27.04 17 32 17C36.96 17 41 21.04 41 26C41 28.02 39.65 30.45 38.34 32.8C37.76 33.85 37.17 34.93 36.67 36ZM32 20C28.69 20 26 22.69 26 26C26 26.28 26.22 26.5 26.5 26.5C26.78 26.5 27 26.28 27 26C27 23.24 29.24 21 32 21C32.28 21 32.5 20.78 32.5 20.5C32.5 20.22 32.28 20 32 20Z" />
+		<path id="Ellipse" class="shp3" d="M31.5 2C47.79 2 61 15.21 61 31.5C61 47.79 47.79 61 31.5 61C15.21 61 2 47.79 2 31.5C2 15.21 15.21 2 31.5 2Z" />
+	</g>
+</svg>
