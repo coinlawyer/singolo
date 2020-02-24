@@ -11,6 +11,7 @@
     --color-header-bottom: #323746;
     --color-link-arrows: #CA4549; 
     --color-slider-bottom: #ea676b;
+    --color-header-dots: #464a5d;
 }
 
 * {
@@ -55,18 +56,18 @@ body {
 
 .header__logo {
     font-family: 'Lato-Bold';
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     font-style: normal;
     display: inline-block;
     position: relative;
     top: 34px;
     line-height: 6px;
-    letter-spacing: -0.4px;
+    letter-spacing: -0.5px;
 }
 
 .header__asterisk {
     color: var(--color-slider);
-    padding-left: 2px;
+    padding-left: 1px;
 }
 
 nav {
@@ -81,11 +82,14 @@ nav {
     justify-content: space-between;
     list-style: none;
     color: var(--color-header-text);
-    top: 40px;
+    top: 38px;
+    left: 14px;
+    width: 421px;
+    padding: 0;
 }
 
 .navigation__item {
-    padding: 0 10px 0 10px;
+    padding: 0 13px 0 14px;
 }
 
 .navigation__link {
@@ -93,6 +97,7 @@ nav {
     color: var(--color-header-text);
     font-family: "Lato-Bold";
     text-decoration: none;
+    letter-spacing: -0.2px;
 }
 
 .navigation__link_active {
@@ -100,6 +105,8 @@ nav {
     color: var(--color-slider);
     font-family: "Lato-Bold";   
     text-decoration: none;
+    letter-spacing: -0.2px;
+    padding-left: 18px;
 }
 
 .navigation__link:hover {
@@ -109,10 +116,12 @@ nav {
 
 .navigation__link:before {
     position: relative;
-    right: 10px;
+    right: 12px;
     content: ".";
-    color: #464a5d;
+    color: var(--color-header-dots);
     bottom: 4px;
+    font-weight: bold;
+    font-size: 1.5rem;
   }
   
   .navigation__item:last-child::after {
@@ -138,11 +147,9 @@ nav {
 }
 
 .phones-wrapper {
-    /* width: 100%; */
     width: 800px;
     display: flex;
     justify-content: space-between;
-    /* position: relative; */
 }
 
 .phone-vertical, 
@@ -153,12 +160,12 @@ nav {
 }
 
 .phone-horisontal {
-    left: 9.9%;
-    top: 42.4%;
+    left: 9.6%;
+    top: 42.3%;
 }
 
 .phone-vertical {
-    top: 83px;
+    top: 54px;
     left: 3px;
 }
 
@@ -181,7 +188,7 @@ nav {
     width: 334px;
     height: 189px;
     position: relative; 
-    background-position: -125px -121px;
+    background-position: -124px -118px;
     top: 137px;
     left: -59px;
     transform: rotate(-90deg) scale(1, -1);
@@ -191,7 +198,7 @@ nav {
     background-image: url(./assets/img/ScreenVert.png);
     width: 188px;
     height: 334px;
-    background-position: -14px -136px;
+    background-position: -15px -136px;
     position: relative; 
     top: 65px;
     left: 14px;
@@ -202,7 +209,6 @@ nav {
     width: 240px;
     height: 483px;
     align-items: center;
-    /* opacity: 0.15; */
 }
 
 .phone-horisontal {
@@ -222,20 +228,18 @@ nav {
     position: relative;
     width: 94px;
     height: 100%;
-    /* background: chartreuse; */
 }
+
 .slider__right-arrow {
     position: relative;
     width: 94px;
     height: 100%;
-    /* background: chartreuse; */
-    
 }
 
 .left-arrow, .right-arrow {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 49%;
+    left: 51%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
@@ -249,6 +253,7 @@ nav {
     cursor: pointer;
     opacity: 0.3;
 }
+
 
 /* --end phones block--*/
 
