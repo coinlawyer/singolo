@@ -1,0 +1,349 @@
+@import "./fonts.css";
+
+/* --color constants-- */
+
+:root{
+    --color-main: #F2F2F2;
+    --color-slider: #F06C64;
+    --color-main-text: #666D89;
+    --color-header-text: #FFFFFF;
+    --color-header: #2D303A;
+    --color-header-bottom: #323746;
+    --color-link-arrows: #CA4549; 
+    --color-slider-bottom: #ea676b;
+    --color-header-dots: #464a5d;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: Lato, Verdana, sans-serif;
+    font-size: 1.6rem;
+    transition: all 0.5s;
+}
+
+.content-wrapper {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+/* --start header-- */
+
+.header {
+    padding: 0 40px 0 40px;
+    width: 100%;
+    height: 95px;
+    background: var(--color-header);
+    border-bottom: 6px solid var(--color-header-bottom);
+}
+
+.header__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--color-header-text);
+    padding-top: 2px;
+}
+
+.header__logo {
+    font-family: 'Lato-Bold';
+    font-size: 2.5rem;
+    font-style: normal;
+    display: inline-block;
+    position: relative;
+    top: 34px;
+    line-height: 6.3px;
+    letter-spacing: -0.5px;
+}
+
+.header__asterisk {
+    color: var(--color-slider);
+    /* padding-left: 1px; */
+}
+
+nav {
+    position:relative; 
+    right: 27px;
+    top: 3px;
+  }
+
+.navigation{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    color: var(--color-header-text);
+    top: 38px;
+    width: 421px;
+    padding: 0 5px 0 17px;
+}
+
+.navigation__item {
+    padding: 0 13px 0 14px;
+}
+
+.navigation__link {
+    font-size: 1.2rem;
+    color: var(--color-header-text);
+    font-family: "Lato-Bold";
+    text-decoration: none;
+    letter-spacing: -0.2px;
+}
+
+.navigation__link_active {
+    font-size: 1.2rem;
+    color: var(--color-slider);
+    font-family: "Lato-Bold";   
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    padding-left: 2rem;
+}
+
+.navigation__link:hover {
+    color: var(--color-slider);
+    cursor: pointer;
+}
+
+.navigation__link:before {
+    position: relative;
+    right: 12px;
+    content: ".";
+    color: var(--color-header-dots);
+    bottom: 4px;
+    font-family: "Lato-Bold";
+    font-size: 1.5rem;
+  }
+  
+  .navigation__item:last-child::after {
+    content: none;
+  }
+
+  /*  -- end header --  */
+
+/* --start phones block-- */
+.slider {
+    width: 100%;
+    background: var(--color-slider);
+    height: 600px; 
+    border-bottom: 6px solid var(--color-slider-bottom);
+}
+
+.slider .slider__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 600px;
+    position: relative;
+}
+
+.phones-wrapper {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.phone-vertical, 
+.phone-horisontal {
+    position: relative;
+    width: 484px;
+    height: 240px;
+}
+
+.phone-horisontal {
+    left: 9.8%;
+    top: 42.3%;
+}
+
+.phone-vertical {
+    top: 54px;
+    left: 3px;
+}
+
+.phone-vertical__base,
+.phone__base {
+    background-image: url(./assets/img/IphoneBase.png);
+    height: 458px;
+    width: 215px;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.phone__base {
+    transform: rotate(180deg);
+
+}
+
+.phone__content {
+    background-image: url(./assets/img/ScreenHor.png);
+    width: 334px;
+    height: 189px;
+    position: relative; 
+    background-position: -124px -118px;
+    top: 137px;
+    left: -59px;
+    transform: rotate(-90deg) scale(1, -1);
+}
+
+.phone-vertical__content{
+    background-image: url(./assets/img/ScreenVert.png);
+    width: 188px;
+    height: 334px;
+    background-position: -15px -136px;
+    position: relative; 
+    top: 65px;
+    left: 14px;
+}
+
+.phone__shadow {
+    background-image: url(./assets/img/Shadow.png);
+    width: 240px;
+    height: 483px;
+    align-items: center;
+}
+
+.phone-horisontal {
+    transform: rotate(90deg);
+}
+
+.phone-horisontal>.phone__shadow {
+    transform: scale(1, -1);
+}
+
+.phone_shadow:last-child {
+    transform: rotate(90deg);
+}
+
+.slider__left-arrow {
+    position: relative;
+    width: 94px;
+    height: 100%;
+}
+
+.slider__right-arrow {
+    position: relative;
+    width: 94px;
+    height: 100%;
+}
+
+.left-arrow {
+    position: absolute;
+    top: 49%;
+    left: 53%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.right-arrow {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.left-arrow:hover {
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.right-arrow:hover {
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+/* --end phones block--*/
+
+/* -- start services block-- */
+
+.services {
+    height: 500px;
+    border-bottom: 6px solid var(--color-header-text);
+    background-color: var(--color-main);
+    color: var(--color-main-text);
+}
+
+.services-wrapper {
+    height: 100%;
+}
+
+.services-commmon-text {
+    padding: 62px 25px 30px 40px;
+}
+
+.sercvices-header {
+    font-family: "Lato-Black";
+    font-size: 30px;
+    padding-bottom:  21px;
+    letter-spacing: -0.1px;
+}
+
+.services-commmon-text>p {
+    font-family: 'Lato-Light';
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.first-line-stretched {
+    word-spacing: 1.2px;
+}
+
+.layout-3-column {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 15px 15px 0 39px;
+}
+
+.tool {
+    width: 320px;
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.tool:nth-last-of-type(-n+3)  {
+    padding-top: 10px;
+    padding-right: 2px;
+}
+
+.tool:nth-of-type(-n+3)  {
+    padding-right: 2px;
+}
+.tool:nth-of-type(4)  {
+    padding-left: 1px;
+}
+
+
+.tool__text-wrapper {
+    /* width: 70%; */
+    overflow: hidden;
+}
+
+.tool__text-wrapper > h3 {
+    font-family: "Lato-Bold";
+    font-size: 1.8rem;
+    line-height: 18px;
+
+}
+
+.tool__text {
+    font-family: "Lato-Regular";
+    font-size: 12px;
+    line-height: 21.5px;
+    text-align: justify;
+    padding: 11px 17px 0 0px;
+}
+
+.tool__image {
+    margin: 0 19px 27px 0px;
+}
+
+
+/* -- end services block-- */
