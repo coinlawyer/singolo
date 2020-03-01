@@ -1,0 +1,36 @@
+@import "./fonts.css";
+
+/* --color constants-- */
+
+:root{
+    --color-main: #F2F2F2;
+    --color-slider: #F06C64;
+    --color-main-text: #666D89;
+    --color-header-text: #FFFFFF;
+    --color-header: #2D303A;
+    --color-header-bottom: #323746;
+    --color-link-arrows: #CA4549; 
+    --color-slider-bottom: #ea676b;
+    --color-header-dots: #464a5d;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: Lato, Verdana, sans-serif;
+    font-size: 1.6rem;
+    transition: all 0.5s;
+}
+
+.content-wrapper {
+    max-width: 1020px;
+    margin: 0 auto;
+}
