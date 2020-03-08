@@ -204,7 +204,7 @@ h3.person__name {
     text-align: justify;
 }
 
-.person__text:nth-of-type(1):first-line{
+.person__text:nth-of-type(1):first-line {
     letter-spacing: 0.11px;
 }
 
@@ -213,12 +213,14 @@ h3.person__name {
 }
 
 .person__social-icons {
+    width: 100%;
     display: flex;
     padding-top: 24px;
+    justify-items: space-between;
 }
 
 .person__social-icon {
-    margin-right: 8px;
+    /* margin-right: 8px; */
 }
 
 .social-icon-svg {
