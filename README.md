@@ -1,1 +1,1 @@
-## Singolo task
+#[link to my Singolo task](https://coinlawyer.github.io/singolo/)
