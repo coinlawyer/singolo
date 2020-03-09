@@ -590,16 +590,19 @@ h2.get-a-quote__title {
     text-align: justify;
 }
 
+.contact-form__wrapper {
+    display: flex;
+    margin-top: 44px;
+}
 
 form {
     display: inline-block;
-    width: 65.8%;
-    padding-top: 44px;
+    width: 618px;
 }
 
 form > * {
     display: block;
-    width: 100%;
+    width: 618px;
     margin-bottom: 16px;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -609,6 +612,20 @@ form > * {
 }
 
 ::placeholder {
+    color: var(--color-input-text);
+    font-family: "Lato-Regular", Verdana, sans-serif;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+}
+
+::-ms-input-placeholder {
+    color: var(--color-input-text);
+    font-family: "Lato-Regular", Verdana, sans-serif;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+}
+
+::-webkit-input-placeholder {
     color: var(--color-input-text);
     font-family: "Lato-Regular", Verdana, sans-serif;
     font-size: 1.2rem;
@@ -649,11 +666,10 @@ form > button:hover {
 }
 
 aside {
-    display: inline-block;
-    width: 32%;
-    margin-left: 17.5px;
+    display: block;
+    /* width: calc(100% - 68%); */
+    margin-left: 19px;
     vertical-align: top;
-    padding-top: 44px;
 }
 
 h3.contacts__title {
