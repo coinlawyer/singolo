@@ -10,16 +10,16 @@
 </head>
 <body>
     <div class="content-wrapper">
-        <header class="header">
+        <header class="header" id="home">
             <div class="header__wrapper">
                 <h1 class="header__logo">Singolo<span class="header__asterisk">*</span></h1>
                 <nav class="header__navigation"></nav>
                     <ul class="navigation">
-                        <li class="navigation__item"><a href="#" class="navigation__link_active">home</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link">services</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link">portfolio</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link">about</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link">contact</a></li>
+                        <li class="navigation__item"><a href="#home" class="navigation__link">home</a></li>
+                        <li class="navigation__item"><a href="#services" class="navigation__link">services</a></li>
+                        <li class="navigation__item"><a href="#portfolio" class="navigation__link">portfolio</a></li>
+                        <li class="navigation__item"><a href="#about" class="navigation__link">about</a></li>
+                        <li class="navigation__item"><a href="#contact" class="navigation__link">contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </section>
-            <section class="services">
+            <section class="services" id="services">
                 <div class="wrapper">
                     <div class="services-commmon-text">
                         <h2 class="sercvices-header">Our Services</h2>
@@ -105,7 +105,7 @@
                     </div>
                 </div>
             </section>
-            <section class="portfolio">
+            <section class="portfolio" id="portfolio">
                     <div class="wrapper">
                         <h2 class="portfolio__title">Portfolio</h2>
                         <p class="portfolio__text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -133,7 +133,7 @@
                         </div>
                     </div>
             </section>
-            <section class="about-us">
+            <section class="about-us" id="about">
                     <div class="wrapper">
                         <h2 class="about-us__title">About Us</h2>
                         <p class="about-us__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -189,7 +189,7 @@
                                 placeholder="Describe your project in detail..." ></textarea>
                                 <button type="submit">Submit</button>
                             </form>
-                            <aside class="contacts">
+                            <aside class="contacts" id="contact">
                                 <h3 class="contacts__title">Contact Information</h3>
                                 <p class="contacts__text">Quisque hendrerit purus dapibus, ornare nibh vitae, viver-
                                     ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
@@ -215,5 +215,6 @@
                 </div>
         </footer>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

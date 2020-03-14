@@ -27,6 +27,7 @@
 
 html {
     font-size: 10px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -108,33 +109,30 @@ nav {
     font-family: "Lato-Bold";
     text-decoration: none;
     letter-spacing: -0.2px;
+    list-style: none;
 }
 
-.navigation__link_active {
-    font-size: 1.2rem;
+.navigation__link.active {
     color: var(--color-slider);
-    font-family: "Lato-Bold";   
-    text-decoration: none;
-    letter-spacing: -0.5px;
-    padding-left: 2rem;
+    text-decoration: underline;
 }
 
-.navigation__link:hover {
+.navigation__link:not(.active):hover {
     color: var(--color-slider);
     cursor: pointer;
 }
 
-.navigation__link:before {
+.navigation__item::before {
+    content: ".";
     position: relative;
     right: 12px;
-    content: ".";
     color: var(--color-header-dots);
     bottom: 4px;
     font-family: "Lato-Bold";
     font-size: 1.5rem;
   }
   
-  .navigation__item:last-child::after {
+  .navigation > li:nth-child(1):before {
     content: none;
   }
 
