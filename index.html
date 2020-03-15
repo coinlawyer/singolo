@@ -10,7 +10,10 @@
 </head>
 <body>
     <div class="content-wrapper">
-        <header class="header" id="home">
+        <header class="header" id="header">
+            <div class="ancor">
+                <a name="home" class="ancor__link"></a>
+            </div>
             <div class="header__wrapper">
                 <h1 class="header__logo">Singolo<span class="header__asterisk">*</span></h1>
                 <nav class="header__navigation"></nav>
@@ -53,7 +56,10 @@
                     </div>
                 </div>
             </section>
-            <section class="services" id="services">
+            <section class="services">
+                <div class="ancor">
+                    <a name="services" class="ancor__link"></a>
+                </div>
                 <div class="wrapper">
                     <div class="services-commmon-text">
                         <h2 class="sercvices-header">Our Services</h2>
@@ -105,8 +111,11 @@
                     </div>
                 </div>
             </section>
-            <section class="portfolio" id="portfolio">
+            <section class="portfolio">
                     <div class="wrapper">
+                        <div class="ancor">
+                            <a name="portfolio" class="ancor__link"></a>
+                        </div>
                         <h2 class="portfolio__title">Portfolio</h2>
                         <p class="portfolio__text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
                         <ul class="portfolio__tags">
@@ -133,8 +142,11 @@
                         </div>
                     </div>
             </section>
-            <section class="about-us" id="about">
+            <section class="about-us">
                     <div class="wrapper">
+                        <div class="ancor">
+                            <a name="about" class="ancor__link"></a>
+                        </div>
                         <h2 class="about-us__title">About Us</h2>
                         <p class="about-us__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                         <div class="about-team">
@@ -177,19 +189,29 @@
                     </div>
             </section>
             <section class="get-a-quote">
+                    <div class="ancor">
+                            <a name="contact" class="ancor__link"></a>
+                    </div>
                     <div class="wrapper">
                         <h2 class="get-a-quote__title">Get a Quote</h2>
                         <p class="get-a-quote__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>  
                         <div class="contact-form__wrapper">
-                            <form action="http://www.example.com/example.htm" method="post">
-                                <input type="text" class="input-name" placeholder="Name (Required)" required>
-                                <input type="email" class="input-email" placeholder="Email (Required)" required>
-                                <input type="text" class="input-subject" placeholder="Subject">
-                                <textarea name="description" id="input-description" cols="30" rows="10" class="input-textarea" 
-                                placeholder="Describe your project in detail..." ></textarea>
-                                <button type="submit">Submit</button>
+                            <form action="http://www.example.com/example.htm" method="post" id="form">
+                                <input type="text" name="name" class="input name" id="input-name" placeholder="Name (Required)" 
+                                    minlength="3" maxlength="30" title="Please enter from 3 to 30 characters" required
+                                >
+                                <input type="email" name="email" class="input email" id="input-email" placeholder="Email (Required)" 
+                                    minlength="6" maxlength="30" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" 
+                                    title="Please enter from 6 to 30 characters, including symbols '@' and '.'" required
+                                >
+                                <input type="text" name="subject" class="input subject" id="input-subject" 
+                                maxlength="60" title="Please enter up to 60 characters" placeholder="Subject">
+                                <textarea name="description" id="description" cols="30" rows="10" class="input textarea description" 
+                                    maxlength="600" title="Please enter up to 600 characters" placeholder="Describe your project in detail..." >
+                                </textarea>
+                                <button type="submit" id="submit-btn">Submit</button>
                             </form>
-                            <aside class="contacts" id="contact">
+                            <aside class="contacts">
                                 <h3 class="contacts__title">Contact Information</h3>
                                 <p class="contacts__text">Quisque hendrerit purus dapibus, ornare nibh vitae, viver-
                                     ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
@@ -214,6 +236,15 @@
                     </ul>
                 </div>
         </footer>
+    </div>
+
+    <div class="modal-overlay hidden" id="modal-overlay"></div>
+    <div class="hidden" id="modal">
+        <div class="modal__message" id="modal__message">
+            <h3>Письмо отправлено</h3> 
+            <div id="modal__text"> </div>
+            <button id="modal-close__btn">Ok</button>
+        </div>
     </div>
     <script src="./script.js"></script>
 </body>
