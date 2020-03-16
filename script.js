@@ -12,6 +12,10 @@
     const INPUT_SUBJECT = document.getElementById('input-subject');
     const MODAL_OVERLAY = document.getElementById('modal-overlay');
 
+    const PORTFOLIO = document.querySelector('.layout-4-column');
+    const PORTFOLIO_TAGS = document.querySelector('.portfolio__tags');
+    let imagesArray = PORTFOLIO.querySelectorAll('img');
+
          
     window.onscroll = () => {
         let bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -43,10 +47,32 @@
         return true;
     };
 
+    const renderPorfolio = parentNode => {
+        let firstChild = parentNode.firstChild;
+        let lastChild = parentNode.lastChild;
+        parentNode.insertBefore(lastChild, firstChild);
+    };
+
       
     HEADER_MENU.addEventListener('click', event => {
-        HEADER_MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
-        event.target.classList.add('active');
+        HEADER_MENU.querySelectorAll('a').forEach(el => 
+            el.classList.remove('active'));
+            event.target.classList.add('active');
+    });
+
+    PORTFOLIO_TAGS.addEventListener('click', event => {
+        PORTFOLIO_TAGS.querySelectorAll('li').forEach(el => {
+            el.classList.remove('active');
+            if (event.target.classList.contains('portfolio__tag')) {
+                event.target.classList.add('active');
+                renderPorfolio(PORTFOLIO);
+            }
+        });
+    });
+
+    PORTFOLIO.addEventListener('click', event => {
+        imagesArray.forEach(el => el.classList.remove('selected'));
+        event.target.classList.add('selected');
     });
 
     BUTTON.addEventListener('click', event => {
@@ -54,12 +80,16 @@
 
             if (validateInput(INPUT_NAME) && validateInput(INPUT_EMAIL)) {
                 [...FORM.querySelectorAll('.input')]
-                .filter(el => el.classList.value.includes('subject') || el.classList.value.includes('description'))
+                .filter(el => el.classList.value.includes('subject') 
+                || el.classList.value.includes('description'))
                 .forEach(el => {
                     MESSAGE.innerHTML += 
-                    el.classList.value.includes('subject') && el.value.trim() ? `<p><span> Тема:</span> ${el.value} </span></p>` : 
-                    el.classList.value.includes('subject') && !el.value.trim() ? `<p> Без темы </p>` :
-                    el.classList.value.includes('description') && el.value.trim() ? `<p><span> Описание: </span> ${el.value}</p>` :
+                    el.classList.value.includes('subject') && 
+                    el.value.trim() ? `<p><span> Тема:</span> ${el.value} </span></p>` : 
+                    el.classList.value.includes('subject') && 
+                    !el.value.trim() ? `<p> Без темы </p>` :
+                    el.classList.value.includes('description') && 
+                    el.value.trim() ? `<p><span> Описание: </span> ${el.value}</p>` :
                     `<p> Без описания </p>`;
                 });
 

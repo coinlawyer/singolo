@@ -475,6 +475,14 @@ h2.portfolio__title {
     display: none;
 }
 
+.layout-4-column img {
+    cursor: pointer;
+}
+
+.selected {
+    outline: 5px solid #F06C64;
+}
+
 /* end portfolio block */
 
 
@@ -876,3 +884,4 @@ footer.social-icon-svg:hover {
     z-index: 1;
 }
 /* end modal block */
+
