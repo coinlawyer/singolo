@@ -11,9 +11,12 @@
     const INPUT_EMAIL = document.getElementById('input-email');
     const INPUT_SUBJECT = document.getElementById('input-subject');
     const MODAL_OVERLAY = document.getElementById('modal-overlay');
-
     const PORTFOLIO = document.querySelector('.layout-4-column');
     const PORTFOLIO_TAGS = document.querySelector('.portfolio__tags');
+    const PHONES_WRAPPER = document.querySelector('.phones-wrapper');
+
+    const ARROWS_WRAPPER = document.querySelector('.slider__wrapper');
+
     let imagesArray = PORTFOLIO.querySelectorAll('img');
 
          
@@ -21,9 +24,9 @@
         let bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       
         if (bodyScrollTop > HEADER.offsetHeight) {
-        HEADER.classList.add('fixed');
+            HEADER.classList.add('fixed');
         } else {
-        HEADER.classList.remove('fixed');
+            HEADER.classList.remove('fixed');
         }
     };
 
@@ -60,6 +63,13 @@
             event.target.classList.add('active');
     });
 
+    PHONES_WRAPPER.addEventListener('click', event => {
+        let id = event.target.dataset.toggleId;
+        let phoneContent = document.getElementById(id);
+        if (!id) return;
+        phoneContent.hidden = !phoneContent.hidden;
+    });
+
     PORTFOLIO_TAGS.addEventListener('click', event => {
         PORTFOLIO_TAGS.querySelectorAll('li').forEach(el => {
             el.classList.remove('active');
@@ -78,10 +88,10 @@
     BUTTON.addEventListener('click', event => {
         event.preventDefault();
 
-            if (validateInput(INPUT_NAME) && validateInput(INPUT_EMAIL)) {
-                [...FORM.querySelectorAll('.input')]
+        if (validateInput(INPUT_NAME) && validateInput(INPUT_EMAIL)) {
+            [...FORM.querySelectorAll('.input')]
                 .filter(el => el.classList.value.includes('subject') 
-                || el.classList.value.includes('description'))
+                    || el.classList.value.includes('description'))
                 .forEach(el => {
                     MESSAGE.innerHTML += 
                     el.classList.value.includes('subject') && 
@@ -93,9 +103,9 @@
                     `<p> Без описания </p>`;
                 });
 
-                MODAL.classList.remove('hidden');
-                MODAL_OVERLAY.classList.remove('hidden');
-            }
+            MODAL.classList.remove('hidden');
+            MODAL_OVERLAY.classList.remove('hidden');
+        }
     });
     
     CLOSE_BUTTON.addEventListener('click', event => {
