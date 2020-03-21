@@ -11,30 +11,29 @@
 <body>
     <div class="content-wrapper">
         <header class="header" id="header">
-            <div class="ancor">
-                <a name="home" class="ancor__link"></a>
-            </div>
             <div class="header__wrapper">
                 <h1 class="header__logo">Singolo<span class="header__asterisk">*</span></h1>
                 <nav class="header__navigation"></nav>
-                    <ul class="navigation">
-                        <li class="navigation__item"><a href="#home" class="navigation__link">home</a></li>
-                        <li class="navigation__item"><a href="#services" class="navigation__link">services</a></li>
-                        <li class="navigation__item"><a href="#portfolio" class="navigation__link">portfolio</a></li>
-                        <li class="navigation__item"><a href="#about" class="navigation__link">about</a></li>
-                        <li class="navigation__item"><a href="#contact" class="navigation__link">contact</a></li>
-                    </ul>
-                </nav>
+                <ul class="navigation">
+                    <li class="navigation__item"><a href="#home" class="navigation__link active">home</a></li>
+                    <li class="navigation__item"><a href="#services" class="navigation__link">services</a></li>
+                    <li class="navigation__item"><a href="#portfolio" class="navigation__link">portfolio</a></li>
+                    <li class="navigation__item"><a href="#about" class="navigation__link">about</a></li>
+                    <li class="navigation__item"><a href="#contact" class="navigation__link">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="slider" data-anchor="home"> 
+            <div id="home" name="home" class="anchor__link">
             </div>
-        </header>
-        <main>
-            <section class="slider"> 
-                <div class="wrapper slider__wrapper">
+            <div class="wrapper slider__wrapper">
                     <div class="slider__left-arrow">
-                        <img class="left-arrow" src="./assets/img/chev-left.svg" alt="button left arrow">
+                        <img class="left-arrow" src="./assets/img/chev-left.svg" data-name="left arrow" alt="button left arrow">
                     </div>
                     <div class="slider__container">
-                        <div class="slider-1">
+                        <div class="phone__slider slider-1 shown">
                             <div class="phones-wrapper">
                                 <div class="phone-vertical">
                                     <div class="phone__shadow">
@@ -53,20 +52,20 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- <div class="slider-2">
+                        </div> 
+                        <div class="phone__slider slider-2">
                             <div class="phones-wrapper">
                                 <div class="phone-vertical">
                                             <div class="phone__shadow">
-                                                <div class="phone__base vertical" data-toggle-id="phone__content-vertical">
-                                                    <div class="phone__content vertical" id="phone__content-vertical">
+                                                <div class="phone__base vertical" data-toggle-id="phone__content-vertical-left">
+                                                    <div class="phone__content vertical" id="phone__content-vertical-left">
                                                     </div>
                                                 </div>
                                             </div>
                                 </div>
                                 <div class="phone-vertical">
                                             <div class="phone__shadow">
-                                                <div class="phone__base vertical" data-toggle-id="phone__content-vertical">
+                                                <div class="phone__base vertical" data-toggle-id="phone__content-vertical-green">
                                                     <div class="phone__content vertical green" id="phone__content-vertical-green">
                                                     </div>
                                                 </div>
@@ -74,24 +73,22 @@
                                 </div>
                                 <div class="phone-vertical">
                                             <div class="phone__shadow">
-                                                <div class="phone__base vertical" data-toggle-id="phone__content-vertical">
-                                                    <div class="phone__content vertical" id="phone__content-vertical">
+                                                <div class="phone__base vertical" data-toggle-id="phone__content-vertical-right">
+                                                    <div class="phone__content vertical" id="phone__content-vertical-right">
                                                     </div>
                                                 </div>
                                             </div>
                                 </div>
                             </div>
-    
-                        </div> -->
+                        </div>
                     </div>
                     <div class="slider__right-arrow">
-                        <img class="right-arrow" src="./assets/img/chev-right.svg" alt="buttton right arrow">
+                        <img class="right-arrow" data-name="right arrow" src="./assets/img/chev-right.svg" alt="buttton right arrow">
                     </div>
                 </div>
             </section>
-            <section class="services">
-                <div class="ancor">
-                    <a name="services" class="ancor__link"></a>
+            <section class="services" data-anchor="services">
+                <div class="anchor__link" id="services">
                 </div>
                 <div class="wrapper">
                     <div class="services-commmon-text">
@@ -144,10 +141,9 @@
                     </div>
                 </div>
             </section>
-            <section class="portfolio">
+            <section class="portfolio" data-anchor="portfolio">
                     <div class="wrapper">
-                        <div class="ancor">
-                            <a name="portfolio" class="ancor__link"></a>
+                        <div class="anchor__link" id="portfolio">
                         </div>
                         <h2 class="portfolio__title">Portfolio</h2>
                         <p class="portfolio__text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -175,10 +171,9 @@
                         </div>
                     </div>
             </section>
-            <section class="about-us">
+            <section class="about-us" data-anchor="about">
                     <div class="wrapper">
-                        <div class="ancor">
-                            <a name="about" class="ancor__link"></a>
+                        <div class="anchor__link" id="about">
                         </div>
                         <h2 class="about-us__title">About Us</h2>
                         <p class="about-us__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -221,9 +216,8 @@
                         </div>
                     </div>
             </section>
-            <section class="get-a-quote">
-                    <div class="ancor">
-                            <a name="contact" class="ancor__link"></a>
+            <section class="get-a-quote" data-anchor="contact">
+                    <div class="anchor__link" id="contact">
                     </div>
                     <div class="wrapper">
                         <h2 class="get-a-quote__title">Get a Quote</h2>
