@@ -27,7 +27,8 @@
 
          
     window.onscroll = () => {
-        let bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        let bodyScrollTop = document.documentElement.scrollTop || 
+            document.body.scrollTop;
       
         if (bodyScrollTop > HEADER.offsetHeight) {
             HEADER.classList.add('fixed');
@@ -77,6 +78,39 @@
             }
         });
     };
+
+    const renderPrevSlide = slideNumber => {
+        hideSlide('to-right');
+        changeSlideNumber(slideNumber+1);
+        showSlide('from-left');
+    };
+
+    const renderNextSlide = slideNumber => {
+        hideSlide('to-left');
+        changeSlideNumber(slideNumber-1);
+        showSlide('from-right');
+    };
+
+    const hideSlide = direction => {
+        SLIDES[slideNumber].classList.add(direction);
+        SLIDES[slideNumber].addEventListener('animationend', event => {
+            event.currentTarget.classList.remove('shown', direction);
+        });
+        isEnable = false;
+    };
+
+    const changeSlideNumber = n => {
+        slideNumber = n > SLIDES.length-1 ? 0 : n < 0 ? SLIDES.length-1 : n;
+    }
+
+    const showSlide = direction => {
+        SLIDES[slideNumber].classList.add('next', direction);
+        SLIDES[slideNumber].addEventListener('animationend', event => {
+            event.currentTarget.classList.remove('next', direction);
+            event.currentTarget.classList.add('shown');
+            isEnable = true;
+        });
+    }
     
     document.addEventListener('scroll', windowScroll);
 
@@ -93,39 +127,6 @@
         phoneContent.hidden = !phoneContent.hidden;
     }));
 
-    const renderPrevSlide = slideNumber => {
-        hideSlide('to-right');
-        changeSlideNumber(slideNumber+1);
-        showSlide('from-left');
-    };
-
-    const renderNextSlide = slideNumber => {
-        hideSlide('to-left');
-        changeSlideNumber(slideNumber-1);
-        showSlide('from-right');
-    };
-
-    const hideSlide = direction => {
-        isEnable = false;
-        SLIDES[slideNumber].classList.add(direction);
-        SLIDES[slideNumber].addEventListener('animationend', event => {
-            event.currentTarget.classList.remove('shown', direction);
-        });
-    };
-
-    const changeSlideNumber = n => {
-        slideNumber = n > SLIDES.length-1 ? 0 : n < 0 ? SLIDES.length-1 : n;
-    }
-
-    const showSlide = direction => {
-        SLIDES[slideNumber].classList.add('next', direction);
-        SLIDES[slideNumber].addEventListener('animationend', event => {
-            event.currentTarget.classList.remove('next', direction);
-            event.currentTarget.classList.add('shown');
-            isEnable = true;
-        });
-    }
-
     ARROWS_WRAPPER.addEventListener('click', event => {
         let id = event.target.dataset.name;
         if (!id) return;
@@ -136,12 +137,13 @@
 
     PORTFOLIO_TAGS.addEventListener('click', event => {
         PORTFOLIO_TAGS.querySelectorAll('li').forEach(el => {
+            let aim = event.target.classList;
+            if (!aim.contains('portfolio__tag')) return;
             el.classList.remove('active');
-            if (event.target.classList.contains('portfolio__tag')) {
-                event.target.classList.add('active');
-                renderPorfolio(PORTFOLIO);
-            }
+            aim.add('active');
         });
+        renderPorfolio(PORTFOLIO);
+        console.log(`hello`);
     });
 
     PORTFOLIO.addEventListener('click', event => {
