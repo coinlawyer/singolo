@@ -1,4 +1,4 @@
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const HEADER_MENU = document.querySelector('.navigation');
     const HEADER = document.getElementById('header');
     const FORM = document.getElementById('form');
@@ -6,25 +6,21 @@
     const CLOSE_BUTTON = document.getElementById('modal-close__btn');
     const MESSAGE = document.getElementById('modal__text');
     const MODAL = document.getElementById('modal');
-    const TEXTAREA_DESCR = document.getElementById('description');
     const INPUT_NAME = document.getElementById('input-name');
     const INPUT_EMAIL = document.getElementById('input-email');
-    const INPUT_SUBJECT = document.getElementById('input-subject');
     const MODAL_OVERLAY = document.getElementById('modal-overlay');
     const PORTFOLIO = document.querySelector('.layout-4-column');
     const PORTFOLIO_TAGS = document.querySelector('.portfolio__tags');
-    const PHONES_WRAPPER = document.querySelectorAll('.phones-wrapper');
-
+    const PHONES_WRAPPER = document.querySelector('.phones-wrapper');
     const ARROWS_WRAPPER = document.querySelector('.slider__wrapper');
     const SLIDES = document.querySelectorAll('.phone__slider');
-
     const ANCHORS = document.querySelectorAll('[data-anchor]');
     const HEADER_LINKS = HEADER_MENU.querySelectorAll('a');
 
-    let imagesArray = PORTFOLIO.querySelectorAll('img');
+    let imagesArray = [...PORTFOLIO.querySelectorAll('img')];
     let slideNumber = 0;
     let isEnable = true;
-
+    
          
     window.onscroll = () => {
         let bodyScrollTop = document.documentElement.scrollTop || 
@@ -58,11 +54,25 @@
         return true;
     };
 
-    const renderPorfolio = parentNode => {
-        let firstChild = parentNode.firstChild;
-        let lastChild = parentNode.lastChild;
-        parentNode.insertBefore(lastChild, firstChild);
-    };
+    const shuffle = array => {
+        let j, temp;
+        for (let i = array.length-1; i>=0; i--) {
+            j = Math.floor(Math.random()*(i+1))
+            temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    } 
+
+    const renderParentNode = ((parentNode, array) => {
+        array = shuffle(array);
+        let child;
+        while (child = parentNode.lastChild) parentNode.removeChild(child);
+        imagesArray.forEach(el => {
+            parentNode.appendChild(el);
+        });
+    });
 
     const windowScroll = event => {
         const currPos = window.scrollY;
@@ -120,12 +130,12 @@
             event.target.classList.add('active');
     });
 
-    PHONES_WRAPPER.forEach(el => el.addEventListener('click', event => {
+    PHONES_WRAPPER.addEventListener('click', event => {
         let id = event.target.dataset.toggleId;
-        let phoneContent = document.getElementById(id);
         if (!id) return;
+        let phoneContent = document.getElementById(id);
         phoneContent.hidden = !phoneContent.hidden;
-    }));
+    });
 
     ARROWS_WRAPPER.addEventListener('click', event => {
         let id = event.target.dataset.name;
@@ -136,14 +146,13 @@
 
 
     PORTFOLIO_TAGS.addEventListener('click', event => {
-        PORTFOLIO_TAGS.querySelectorAll('li').forEach(el => {
-            let aim = event.target.classList;
-            if (!aim.contains('portfolio__tag')) return;
-            el.classList.remove('active');
-            aim.add('active');
-        });
-        renderPorfolio(PORTFOLIO);
-        console.log(`hello`);
+        let target = event.target;
+        const li = PORTFOLIO_TAGS.querySelectorAll('li');
+        if (!target.classList.contains('portfolio__tag')) return;
+        if (target.classList.contains('active')) return;
+        li.forEach(el => el.classList.remove('active'));
+        target.classList.add('active');
+        renderParentNode(PORTFOLIO, imagesArray);
     });
 
     PORTFOLIO.addEventListener('click', event => {
@@ -182,4 +191,4 @@
         MODAL_OVERLAY.classList.add('hidden');
     });
 
-// });
+});

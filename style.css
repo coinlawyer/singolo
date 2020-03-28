@@ -55,23 +55,37 @@ body {
 .anchor__link {
     position: relative;
     display: block;
-    top: -100px;
+    top: -10rem;
     visibility: hidden;
 }
 
 #services {
     position: relative;
     display: block;
-    top: -94px;
+    top: -9.4rem;
     visibility: hidden;
 }
+
+/*start media queries for responsive*/
+
+@media only screen and (max-width: 1020px) {
+    
+}
+@media only screen and (max-width: 768px) {
+
+}
+@media only screen and (max-width: 375px) {
+
+}
+
+/*end media queries for responsive*/
 
 
 /* --start header-- */
 
 .header {
     box-sizing: border-box;
-    padding: 0 40px 71px 40px;
+    padding: 0 4rem 7.1rem 4rem;
     width: 100%;
     background: var(--color-header);
     border-bottom: 0.6rem solid var(--color-header-bottom);
@@ -91,7 +105,7 @@ body {
     align-items: center;
     text-transform: uppercase;
     color: var(--color-header-text);
-    padding-top: 2px;
+    padding-top: 0.2rem;
 }
 
 .header__logo {
@@ -100,9 +114,9 @@ body {
     font-style: normal;
     display: inline-block;
     position: relative;
-    top: 34px;
-    line-height: 6.3px;
-    letter-spacing: -0.5px;
+    top: 3.4rem;
+    line-height: 0.63rem;
+    letter-spacing: -0.05rem;
 }
 
 .header__asterisk {
@@ -111,8 +125,8 @@ body {
 
 nav {
     position:relative; 
-    right: 27px;
-    top: 3px;
+    right: 2.7rem;
+    top: 3rem;
   }
 
 .navigation{
@@ -121,8 +135,8 @@ nav {
     justify-content: space-between;
     list-style: none;
     color: var(--color-header-text);
-    top: 38px;
-    width: 421px;
+    top: 3.8rem;
+    width: 42.1rem;
     padding: 0 5px 0 36px;
 }
 
@@ -196,7 +210,6 @@ nav {
     display: flex;
     width: 100%;
     height: 100%;
-    padding: 60px 40px;
     justify-content: space-around;
     align-items: center;    
     padding: 6rem 13.8rem 6.5rem 1.7rem;
@@ -404,7 +417,6 @@ nav {
 .right-arrow {
     position: absolute;
     top: 47%;
-    right: 0%;
     z-index: 30;
     right: 4rem;
 }
