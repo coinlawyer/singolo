@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ANCHORS = document.querySelectorAll('[data-anchor]');
     const HEADER_LINKS = HEADER_MENU.querySelectorAll('a');
 
-    let imagesArray = [...PORTFOLIO.querySelectorAll('img')];
+    let imagesArray = [...PORTFOLIO.querySelectorAll('div')];
     let slideNumber = 0;
     let isEnable = true;
     
